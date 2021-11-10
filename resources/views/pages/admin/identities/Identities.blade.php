@@ -36,7 +36,6 @@
                             <th>Total Pemesanan</th>
                             <th>Pemesanan Selesai</th>
                             <th>Detail</th>
-                            <th>Ubah Data</th>
                         </tr>
                     </thead>
             
@@ -48,13 +47,12 @@
                             <td>{{ $item->receipt_number }}</td>
                             <td>{{ $item->name }}</td>
                             <td >
-                                <a href="" class="btn btn-info d-flex justify-content-center">Tambah</a>
+                                <a href="{{ route('transaction',$item->receipt_number) }}" class="btn btn-info d-flex justify-content-center">Tambah</a>
                             </td>
                             <td>{{ $item->transaction->count() }}</td>
                             <td>{{ $item->transaction->where('status', 'selesai')->count() }}</td>
-                            <th>Detail</th>
                             <th>
-                                <a href="{{ route('Identities.edit', $item->receipt_number) }}" class="btn btn-primary d-flex justify-content-center">Ubah</a>
+                                <a href="{{ route('Identities.edit', $item->receipt_number ) }}" class="btn btn-primary d-flex justify-content-center">Show</a>
                             </th>
                         </tr>
                         @endforeach           

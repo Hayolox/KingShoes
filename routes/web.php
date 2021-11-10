@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\IdentitiesController;
+use App\Http\Controllers\Admin\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('Secret')->group(function(){
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('Identities', IdentitiesController::class);
+
+        Route::get('Transaction/{id}', [TransactionController::class, 'create'])->name('transaction');
+        Route::post('Transaction/Proses/{id}', [TransactionController::class, 'proses'])->name('transaction-proses');
+        Route::get('Transaction/status/{id}', [TransactionController::class, 'status'])->name('transaction-status');
+        Route::delete('Transaction/delete/{id}', [TransactionController::class, 'delete'])->name('transaction-delete');
+
 });

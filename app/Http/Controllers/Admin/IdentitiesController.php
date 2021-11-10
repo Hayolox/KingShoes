@@ -15,7 +15,7 @@ class IdentitiesController extends Controller
      */
     public function index ( Request $request)
     {
-        $identities = Identity::paginate(10);
+        $identities = Identity::latest()->paginate(10);
 
         if($request->has('search'))
         {
@@ -77,7 +77,8 @@ class IdentitiesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Identity::where('receipt_number', $id)->firstOrFail();
+        return view('pages.admin.identities.IdentitiesEdit', compact('item'));
     }
 
     /**
