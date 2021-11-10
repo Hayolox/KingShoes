@@ -17,7 +17,7 @@ class CreateIdentitiesTable extends Migration
             $table->integer('receipt_number')->primary();
             $table->string('name', 100);
             $table->string('phone_number', 15);
-            $table->string('address');
+            $table->string('address', 225);
             $table->timestamps();
         });
     }

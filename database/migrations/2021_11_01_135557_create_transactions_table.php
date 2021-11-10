@@ -18,6 +18,7 @@ class CreateTransactionsTable extends Migration
             $table->integer('receipt_number');
             $table->unsignedBigInteger('package_types_id');
             $table->string('name_shoe');
+            $table->string('status');
             $table->timestamps();
 
         });
