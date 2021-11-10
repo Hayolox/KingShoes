@@ -79,9 +79,9 @@
                                         
                                     </tr>
                                     @endforeach           
-                                
                                 </tbody>
                             </table>
+                            <h3>Total Harga : Rp  {{ number_format($transaction->package->sum('price', 3, ',', '.')) }}</h3>
                           
                         </div>
                 </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Identity;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class IdentitiesController extends Controller
@@ -77,8 +78,9 @@ class IdentitiesController extends Controller
      */
     public function edit($id)
     {
-        $item = Identity::where('receipt_number', $id)->firstOrFail();
-        return view('pages.admin.identities.IdentitiesEdit', compact('item'));
+        $item = Identity::where('receipt_number', $id)->firstOrFail(); 
+        $transaction = Transaction::where('receipt_number', $item->receipt_number)->firstOrFail();
+        return view('pages.admin.identities.IdentitiesEdit', compact('item','transaction'));
     }
 
     /**

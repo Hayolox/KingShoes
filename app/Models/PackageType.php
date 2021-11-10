@@ -9,4 +9,6 @@ class PackageType extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+
 }
