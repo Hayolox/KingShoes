@@ -15,13 +15,14 @@ class DashboardController extends Controller
     public function index()
     {
         $identities = Identity::with(['transaction'])->whereHas('transaction', function($transaction){
-            $transaction->where('status', 'selesai');
+            $transaction->whereNotIn('status', ['proses']);
         })->count();
         $identitiy = Identity::with(['transaction'])->whereHas('transaction', function($transaction){
             $transaction->where('status', 'proses');
         })->count();
         $shoe = Transaction::where('status', 'selesai')->count();
         $income = TransactionDetails::sum('price');
-        return View('pages.admin.Dashboard', compact('identities','shoe','identitiy','income'));
+        $costumers = $identities-$identitiy;
+        return View('pages.admin.Dashboard', compact('costumers','shoe','identitiy','income'));
     }
 }
