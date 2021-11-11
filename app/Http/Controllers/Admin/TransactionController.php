@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Identity;
 use App\Models\PackageType;
 use App\Models\Transaction;
+use App\Models\TransactionDetails;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
@@ -38,19 +39,34 @@ class TransactionController extends Controller
     {
         $item = Transaction::findOrFail($id);
         $item->delete();
-        return back();
+        if($item->count() > 2)
+        {
+            return back();
+        }else{
+            return redirect()->route('Identities.index');
+        }
     }
 
     public function status($id)
     {
         $item = Transaction::findOrFail($id);
+      
         if($item->status == 'proses')
         {
           
             $item->update([
                 'status' => 'selesai'
             ]);
-
+            if ($item->package_types_id == 1){
+                $price = 25000;
+            }else{
+                $price = 35000;
+            };
+            TransactionDetails::create([
+                'receipt_number' => $item->receipt_number,
+                'transaction_id' => $id,
+                'price' => $price,
+            ]);
             
         }else
         {
@@ -58,7 +74,8 @@ class TransactionController extends Controller
             $item->update([
                 'status' => 'proses'
             ]);
-        
+            $transaction_details = TransactionDetails::where('transaction_id', $item->id)->firstOrFail();
+            $transaction_details->delete();
         }
         return back();
 
