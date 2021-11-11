@@ -22,7 +22,7 @@ class TransactionController extends Controller
     {
         $request->validate([
             'name_shoe' => 'required',
-            'package_types_id' => 'required'
+            'package_types_id' => 'required|numeric'
         ]);
 
         Transaction::create([

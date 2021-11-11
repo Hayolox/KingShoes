@@ -24,9 +24,9 @@
                         </ul>
                     </div>
                     @endif
-                    <form action="{{ route('Identities.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('Identities.update',$item->receipt_number ) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-
+                        @method('put')
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" name="name" value="{{ $item->name }}" class="form-control" id="name">

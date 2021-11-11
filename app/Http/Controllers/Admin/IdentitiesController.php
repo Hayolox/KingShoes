@@ -94,7 +94,19 @@ class IdentitiesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'phone_number' => 'required|numeric',
+            'address' => 'required'
+        ]);
+       
+        Identity::where('receipt_number', $id)->update([
+            'name' => $request->name,
+            'phone_number' => $request->phone_number,
+            'address' => $request->address,
+        ]);
+        return back();
+     
     }
 
     /**
