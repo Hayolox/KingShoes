@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\IdentitiesController;
 use App\Http\Controllers\Admin\TransactionController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('Secret')->group(function(){
+Route::get('Auth/Login', [LoginController::class, 'index'])->name('login');
+Route::post('Auth/Login/Load', [LoginController::class, 'login'])->name('login-load');
+Route::get ('Auth/Logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::prefix('Secret')->middleware(['auth'])->group(function(){
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('Identities', IdentitiesController::class);
 
