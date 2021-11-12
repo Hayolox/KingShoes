@@ -24,12 +24,12 @@
             @isset($transaction)
                 @foreach ($identities as $item)
                     <div class="row align-items-center justify-content-center mt-2">
-                        <div class="col-4 ">
+                        <div class="d-flex justify-content-center">
                             <div class="card" style="width: 18rem;">
                                 <div class="card-body">
                                 <h5 class="card-title">Nama : {{ $item->name }}</h5>
                                 <h5 class="card-title">Alamat : {{ $item->address }}</h5>
-                                <h5 class="card-title">Jumlah Sepatu : {{ $item->tran->count() }}</h5>
+                                <h5 class="card-title">Jumlah Sepatu : {{ $item->tran->where('receipt_number', $item->receipt_number)->count() }}</h5>
                                 </div>
                             </div>
                         </div>
