@@ -1,0 +1,49 @@
+@import "variables";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    .nav-item {
+        font-family: $font-robo;
+    }
+}
+
+#cek-resi {
+    background-image: url("assets/images/background.png");
+    background-position: center;
+    background-size: cover;
+    h1 {
+        font-family: $font-robo;
+        font-size: 4rem;
+        span {
+            color: #908A83;
+        }
+    }
+    h3 {
+        font-size: 2rem;
+        font-weight: 100!important;
+    }
+    p {
+        font-size: 1.2rem;
+        font-weight: lighter;
+    }
+    .btn {
+        background-color: #908A83;
+    }
+}
+
+@media (max-width: 991.98px) {
+    #cek-resi {
+        h1 {
+            font-size: 1.5rem;
+        }
+        h3 {
+            font-size: 0.75rem;
+        }
+        p {
+            font-size: 0.6rem;
+        }
+    }
+}

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\IdentitiesController;
 use App\Http\Controllers\Admin\TransactionController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('Auth/Login', [LoginController::class, 'index'])->name('login');
 Route::post('Auth/Login/Load', [LoginController::class, 'login'])->name('login-load');
 Route::get ('Auth/Logout', [LoginController::class, 'logout'])->name('logout');

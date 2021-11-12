@@ -39,6 +39,8 @@ class TransactionController extends Controller
     {
         $item = Transaction::findOrFail($id);
         $item->delete();
+        $transaction_details = TransactionDetails::where('transaction_id', $item->id)->firstOrFail();
+        $transaction_details->delete();
         if($item->count() > 2)
         {
             return back();

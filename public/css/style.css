@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-item {
+    font-family: "Bebas Neue", cursive;
+}
+
+#cek-resi {
+    background-image: url("assets/images/background.png");
+    background-position: center;
+    background-size: cover;
+}
+
+#cek-resi h1 {
+    font-family: "Bebas Neue", cursive;
+    font-size: 4rem;
+}
+
+#cek-resi h1 span {
+    color: #908A83;
+}
+
+#cek-resi h3 {
+    font-size: 2rem;
+    font-weight: 100 !important;
+}
+
+#cek-resi p {
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+#cek-resi .btn {
+    background-color: #908A83;
+}
+
+@media (max-width: 991.98px) {
+    #cek-resi h1 {
+        font-size: 1.5rem;
+    }
+    #cek-resi h3 {
+        font-size: 0.75rem;
+    }
+    #cek-resi p {
+        font-size: 0.6rem;
+    }
+}
+
+
+/*# sourceMappingURL=style.css.map */
