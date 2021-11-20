@@ -1,6 +1,6 @@
 <nav class="navbar py-4 navbar-expand-lg navbar-light">
     <div class="container">
-        <a class="navbar-brand" href="#"><img width="65px" style="border-radius: 50%;" src="assets/images/logo.jpeg" alt="Logo"></a>
+        <a class="navbar-brand" href="{{ route('home') }}"><img width="65px" style="border-radius: 50%;" src="assets/images/logo.jpeg" alt="Logo"></a>
         <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

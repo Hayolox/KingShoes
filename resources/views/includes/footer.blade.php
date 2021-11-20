@@ -8,12 +8,17 @@
                     </div>
                 </div>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto reiciendis veniam culpa id itaque eius commodi officia asperiores blanditiis aperiam ullam, laudantium voluptate similique ducimus corrupti omnis dolores ad odit?
+                    Proyek Rumahan🏠 <br>
+                    Mon - Wed & Sat 10AM - 20PM <br>
+                    Thurs - Fri 13AM - 20PM <br>
+                    Jl. Tingang Induk No.6 <br>
+                    📞 0895701104478 (WA) <br>
+                    📞 082255639822 (WA)
                 </p>
             </div>
             <div class="col-lg-6">
                 <h4 style="margin-top: 30px; margin-bottom: 10px;">Media Sosial</h4>
-                <a href=""><img src="assets/images/logo/Instagram.png" style="width: 30px;" alt=""></a>
+                <a href="https://www.instagram.com/kingshoes.clean/" target="_blank"><img src="assets/images/logo/Instagram.png" style="width: 30px;" alt=""></a>
             </div>
         </div>
     </div>
